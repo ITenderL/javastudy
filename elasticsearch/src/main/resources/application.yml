@@ -1,0 +1,8 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: elasticsearch
+elasticsearch:
+  host: 172.18.169.102:9200
+
