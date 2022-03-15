@@ -4,5 +4,5 @@ spring:
   application:
     name: elasticsearch
 elasticsearch:
-  host: 172.18.169.102:9200
+  host: 172.31.36.100:9200
 
