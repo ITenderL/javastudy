@@ -97,7 +97,7 @@ public class RestHighLevelClientForDocumentSearchTest {
         HighlightBuilder highlightBuilder = new HighlightBuilder().requireFieldMatch(false).field("description").preTags("<span style='color:red;'>").postTags("</span>");
         // sourceBuilder.query(QueryBuilders.matchAllQuery())
         sourceBuilder.query(QueryBuilders.termQuery("description", "好吃"))
-                .from(0) // 起始位置
+                .from(0) // 起始位置DADA
                 .size(10) // 每页的记录数
                 .sort("price", SortOrder.DESC) // 排序
                 .fetchSource(new String[]{}, new String[]{"createTime"}) // 参数 1.包含的字段数组 2.排除的字段数组
