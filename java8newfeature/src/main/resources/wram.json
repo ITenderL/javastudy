@@ -1,0 +1,306 @@
+{
+  "filters": [
+    {
+      "key": "Theater",
+      "value": "地区",
+      "canSeparateAnalyze": true,
+      "indexKey": {
+        "voc_original_warn_detail": "theater",
+        "voc_original_warn_label": "theater"
+      }
+    },
+    {
+      "key": "Channel",
+      "value": "渠道",
+      "indexKey": {
+        "voc_original_warn_detail": "feedbackChannel",
+        "voc_original_warn_label": "feedbackChannel"
+      }
+    },
+    {
+      "key": "Model",
+      "value": "机型",
+      "canSeparateAnalyze": true,
+      "indexKey": {
+        "voc_original_warn_detail": "newCustModel",
+        "voc_original_warn_label": "newCustModel"
+      }
+    },
+    {
+      "key": "VocLabel",
+      "value": "VOC标签",
+      "canSeparateAnalyze": true,
+      "indexKey": {
+        "voc_original_warn_detail": "",
+        "voc_original_warn_label": ""
+      }
+    },
+    {
+      "key": "Emotion",
+      "value": "情感",
+      "indexKey": {
+        "voc_original_warn_detail": "vocMalfunction.emotionAttribute",
+        "voc_original_warn_label": "emotionAttribute"
+      }
+    },
+    {
+      "key": "Keyword",
+      "value": "关键词",
+      "isSeparateWords": true,
+      "indexKey": {
+        "voc_original_warn_detail": "userContent",
+        "voc_original_warn_label": "userContent"
+      }
+    },
+    {
+      "key": "Brand",
+      "value": "品牌",
+      "indexKey": {
+        "voc_original_warn_detail": "brand",
+        "voc_original_warn_label": "brand"
+      }
+    },
+    {
+      "key": "GameName",
+      "value": "游戏名称",
+      "indexKey": {
+        "voc_original_warn_label": "gamename"
+      },
+      "isDynamicUpdate": true,
+      "canSeparateAnalyze": true,
+      "preconditionMonitorFilters": [
+        "VocLabel"
+      ]
+    }
+  ],
+  "measures": [
+    {
+      "key": "FeedbackQuantity",
+      "value": "反馈量",
+      "allowsCalculateMethods": [
+        "Value",
+        "Difference",
+        "ChainedValueOfDifference",
+        "DifferenceFromAverage",
+        "ChainedValueOfDifferenceToAverage"
+      ],
+      "allowPeriods": [
+        "CurrentDay",
+        "Recent7days",
+        "Recent30days"
+      ]
+    },
+    {
+      "key": "LabelFeedbackQuantityProportion",
+      "value": "标签反馈量占比",
+      "allowsCalculateMethods": [
+        "Difference"
+      ],
+      "allowPeriods": [
+        "CurrentDay",
+        "Recent7days",
+        "Recent30days"
+      ]
+    },
+    {
+      "key": "NPS",
+      "value": "NPS值",
+      "preconditionFilter": [
+        {
+          "filter": "Channel",
+          "condition": "equals",
+          "value": "NPS"
+        }
+      ],
+      "allowsCalculateMethods": [
+        "Value"
+      ],
+      "allowPeriods": [
+        "UpToNow"
+      ],
+      "displayPercentSign": true
+    },
+    {
+      "key": "FavorableRateOfGoods",
+      "value": "当期商品好评率",
+      "preconditionFilter": [
+        {
+          "filter": "Channel",
+          "condition": "equals",
+          "value": "NPS"
+        }
+      ],
+      "allowsCalculateMethods": [
+        "Difference"
+      ],
+      "allowPeriods": [
+        "CurrentDay",
+        "Recent7days",
+        "Recent30days"
+      ],
+      "displayPercentSign": true
+    },
+    {
+      "key": "AccFavorableRateOfGoods",
+      "value": "累计商品好评率",
+      "preconditionFilter": [
+        {
+          "filter": "Channel",
+          "condition": "equals",
+          "value": "NPS"
+        }
+      ],
+      "allowsCalculateMethods": [
+        "Difference"
+      ],
+      "allowPeriods": [
+        "UpToNow"
+      ],
+      "displayPercentSign": true
+    },
+    {
+      "key": "NumberOfFans",
+      "value": "粉丝量",
+      "preconditionFilter": [
+        {
+          "filter": "Channel",
+          "condition": "equals",
+          "value": "NPS"
+        }
+      ],
+      "allowsCalculateMethods": [
+        "Difference"
+      ],
+      "allowPeriods": [
+        "UpToNow"
+      ]
+    },
+    {
+      "key": "NumberOfComment",
+      "value": "评论量",
+      "preconditionFilter": [
+        {
+          "filter": "Channel",
+          "condition": "equals",
+          "value": "NPS"
+        }
+      ],
+      "allowsCalculateMethods": [
+        "Difference"
+      ],
+      "allowPeriods": [
+        "UpToNow"
+      ]
+    },
+    {
+      "key": "NumberOfForwarding",
+      "value": "转发量",
+      "preconditionFilter": [
+        {
+          "filter": "Channel",
+          "condition": "equals",
+          "value": "NPS"
+        }
+      ],
+      "allowsCalculateMethods": [
+        "Difference"
+      ],
+      "allowPeriods": [
+        "UpToNow"
+      ]
+    },
+    {
+      "key": "Likes",
+      "value": "点赞量",
+      "preconditionFilter": [
+        {
+          "filter": "Channel",
+          "condition": "equals",
+          "value": "NPS"
+        }
+      ],
+      "allowsCalculateMethods": [
+        "Difference"
+      ],
+      "allowPeriods": [
+        "UpToNow"
+      ]
+    }
+  ],
+  "periods": [
+    {
+      "key": "CurrentDay",
+      "value": "当日"
+    },
+    {
+      "key": "Recent7days",
+      "value": "近7天"
+    },
+    {
+      "key": "Recent30days",
+      "value": "近30天"
+    },
+    {
+      "key": "UpToNow",
+      "value": "累计至今"
+    }
+  ],
+  "CalculateMethods": [
+    {
+      "key": "Value",
+      "value": "值"
+    },
+    {
+      "key": "Difference",
+      "value": "差值"
+    },
+    {
+      "key": "ChainedValueOfDifference",
+      "value": "环比率",
+      "displayPercentSign": true
+    },
+    {
+      "key": "DifferenceFromAverage",
+      "value": "与平均值的差值"
+    },
+    {
+      "key": "ChainedValueOfDifferenceToAverage",
+      "value": "较平均值的环比率",
+      "displayPercentSign": true
+    }
+  ],
+  "recentCount": [
+    {
+      "code": "week",
+      "value": 10
+    },
+    {
+      "code": "month",
+      "value": 2
+    }
+  ],
+  "operators": [
+    {
+      "key": "Gt",
+      "value": ">"
+    },
+    {
+      "key": "Gte",
+      "value": ">="
+    },
+    {
+      "key": "Lt",
+      "value": "<"
+    },
+    {
+      "key": "Lte",
+      "value": "<="
+    }
+  ],
+  "warningLevels": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ]
+}

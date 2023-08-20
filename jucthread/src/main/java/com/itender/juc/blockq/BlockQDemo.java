@@ -9,9 +9,10 @@ import java.util.concurrent.TimeUnit;
  * @Description: 阻塞队列
  */
 public class BlockQDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // test1();
         // test3();
+        test4();
     }
 
     /**
@@ -93,8 +94,11 @@ public class BlockQDemo {
 
         // 出队
         blockingQueue.poll();
+        System.out.println(blockingQueue.peek());
         blockingQueue.poll();
+        System.out.println(blockingQueue.peek());
         blockingQueue.poll();
+        System.out.println(blockingQueue.peek());
         // 返回null, 2秒后中断
         blockingQueue.poll(2, TimeUnit.SECONDS);
 

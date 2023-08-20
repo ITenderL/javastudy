@@ -1,5 +1,7 @@
 package com.itender.collection;
 
+import cn.hutool.core.date.DateUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,9 @@ import java.util.List;
  */
 public class ListCodeDemo {
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
+
+        double ceil = Math.floor(11 / 50);
+        System.out.println(DateUtil.today());
+        ThreadLocal<String> threadLocal = new ThreadLocal<>();
     }
 }

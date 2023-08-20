@@ -27,7 +27,9 @@ public class SkuService {
 
     @Transactional(rollbackFor = Exception.class)
     public void batchInsert(Long id) {
+        Sku sku = new Sku().setAlertNum(1).setBrandName("");
         List<Sku> skuList = skuMapper.getSkuList(id);
+        int i = 1/0;
         System.out.println("foreach start:" + DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
         // skuMapper.batchInsert(skuList);
         Lists.partition(skuList, 100).forEach(skuMapper::batchInsert);

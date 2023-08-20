@@ -1,6 +1,6 @@
 package com.itender.leecode.problem;
 
-import com.itender.leecode.entity.ListNode;
+import com.itender.leecode.listnode.ListNode;
 
 /**
  * @Author: ITender
@@ -35,7 +35,7 @@ public class ReverseList {
         ListNode node1 = new ListNode(1, node2);
 
         ListNode node = iterate(node1);
-        System.out.println(node);
+        System.out.println(node.val);
     }
 
 }

@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: limitrater
-  redis:
-    host: 172.24.115.186
-    port: 6379

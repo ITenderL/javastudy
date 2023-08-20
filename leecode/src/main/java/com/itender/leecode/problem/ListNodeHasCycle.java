@@ -1,6 +1,6 @@
 package com.itender.leecode.problem;
 
-import com.itender.leecode.entity.ListNode;
+import com.itender.leecode.listnode.ListNode;
 
 /**
  * @Author: ITender
@@ -22,9 +22,10 @@ public class ListNodeHasCycle {
         if (head == null || head.next == null) {
             return false;
         }
-        ListNode fastPtr = head, slowPtr = head;
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
 
-        while(fastPtr.next != null && fastPtr.next.next != null) {
+        while (fastPtr.next != null && fastPtr.next.next != null) {
             slowPtr = slowPtr.next;
             fastPtr = fastPtr.next.next;
             if (slowPtr == fastPtr) {

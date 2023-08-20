@@ -1,6 +1,5 @@
 package com.itender.juc.suport;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
@@ -21,7 +20,7 @@ public class CyclicBarrierDemo {
             // lambda能拿到i吗？不能
             final int tmp = i;
             new Thread(() -> {
-                System.out.println(Thread.currentThread().getName() + "收集了" + tmp + "颗龙珠！");
+                System.out.println(Thread.currentThread().getName() + "收集了" + (tmp + 1) + "颗龙珠！");
                 try {
                     // 等待七个线程都执行完了，再向下执行
                     cyclicBarrier.await();

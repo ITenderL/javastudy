@@ -1,8 +1,6 @@
 package com.itender.leecode.problem;
 
-import com.itender.leecode.entity.ListNode;
-
-import java.util.List;
+import com.itender.leecode.listnode.ListNode;
 
 /**
  * @Author: ITender

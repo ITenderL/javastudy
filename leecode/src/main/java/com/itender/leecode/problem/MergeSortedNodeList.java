@@ -1,6 +1,6 @@
 package com.itender.leecode.problem;
 
-import com.itender.leecode.entity.ListNode;
+import com.itender.leecode.listnode.ListNode;
 
 /**
  * @Author: ITender

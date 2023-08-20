@@ -1,6 +1,9 @@
 package com.itender.mybatis.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
@@ -13,6 +16,9 @@ import java.util.Date;
  * @Description:
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 @Table(name = "tb_sku")
 public class Sku implements Serializable {
 
