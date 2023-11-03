@@ -1,15 +1,15 @@
 package com.itender.newfeature;
 
 
-import com.sun.deploy.util.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import java.sql.SQLOutput;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+
 
 /**
  * @author itender
@@ -49,76 +49,76 @@ public class NewFeatureDemo {
         // int totalAge = userList.stream().mapToInt(User::getAge).reduce(Integer::sum).getAsInt();
         // System.out.println("totalAge = " + totalAge);
 
-        userList.stream().sorted(Comparator.comparing(a -> Integer.parseInt(a.getAge()), Comparator.nullsLast(Integer::compareTo).reversed())).collect(Collectors.toList()).forEach(System.out::println );
+        userList.stream().sorted(Comparator.comparing(a -> Integer.parseInt(a.getAge()), Comparator.nullsLast(Integer::compareTo).reversed())).collect(Collectors.toList()).forEach(System.out::println);
 
 
-            // // list转成map
-            // Map<Long, String> map = userList.stream().collect(Collectors.toMap(User::getNumber, User::getName, (key1, key2) -> key2));
-            // // Map<Long, String> map = userList.stream().collect(Collectors.toMap(User::getNumber, User::getName));
-            // Map<Long, User> userMap = userList.stream().collect(Collectors.toMap(User::getNumber, user -> user, (key1, key2) -> key2));
-            // System.out.println("map为：" + map);
-            // System.out.println("userMap为：" + userMap);
-            // userList.stream().map(User::getAge).collect(Collectors.toList()).stream().sorted().distinct().forEach(s -> System.out.println(s));
-            //
-            // //对数组的统计，比如用
-            // List<Integer> number = Arrays.asList(1, 2, 5, 4, 7, 3, 9);
-            //
-            // int[] ints = number.stream().mapToInt(i -> i).toArray();
-            // List<Integer> list = Arrays.stream(ints).boxed().collect(Collectors.toList());
-            //
-            //
-            // // 求和
-            // long sum = number.stream().mapToInt((x) -> x).summaryStatistics().getSum();
-            // // 最大值
-            // int max = number.stream().mapToInt(x -> x).summaryStatistics().getMax();
-            // int min = number.stream().mapToInt(x -> x).summaryStatistics().getMin();
-            // double average = number.stream().mapToInt(x -> x).summaryStatistics().getAverage();
-            // System.out.println("最大值；" + max + " 最小值：" + min + " 和为：" + sum + " 品均值为：" + average);
-            //
-            // Map<String, List<User>> listMap = userList.stream().collect(Collectors.groupingBy(s -> s.getName()));
-            // System.out.println("listMap为：" + listMap);
-            //
-            // int[] array = number.stream().mapToInt(i -> i).toArray();
-            // Arrays.stream(array).sorted().forEach(i -> System.out.println(i));
-            //
-            // Stream.of(array).collect(Collectors.toList());
-            // List<Integer> integerList = Arrays.stream(array).boxed().collect(Collectors.toList());
-            // integerList.stream().forEach(System.out::println);
-            //
-            //
-            // List<String> stringList = new ArrayList<>();
-            // stringList.add("1");
-            // stringList.add("2");
-            // stringList.add("3");
-            // stringList.add("4");
-            //
-            // System.out.println("List转成string：" + StringUtils.join(stringList, ","));
-            //
-            // IntStream.rangeClosed(1, 7).forEach(System.out::println);
-            //
-            // int[] arr = new int[6];
-            //
-            // Arrays.fill(arr, 1);
-            // Arrays.stream(arr).forEach(System.out::println);
-            //
-            // int[] nums = {-7, -3, 3, 4,6};
-            // int[] res = new int[nums.length];
-            // for (int i = 0; i < nums.length; i++) {
-            //     res[i] = Math.abs(nums[i]) * Math.abs(nums[i]);
-            // }
-            // Arrays.sort(res);
-            //
-            // // System.out.println(">>>运算结果：" + (2 >>> 16));
-            // // System.out.println(">>>运算结果：" + (2 >>> 2));
-            //
-            // List<String> splitList = Arrays.asList("aaa", "bbb", "ccc");
-            // System.out.println(splitList.stream().collect(Collectors.joining("、", "[", "]")));
-            //
-            //
-            // List<String> sortList = Arrays.asList("1", "22", "15", "7", "18");
-            // sortList.stream().sorted().collect(Collectors.toList()).forEach(System.out::println);
+        // // list转成map
+        // Map<Long, String> map = userList.stream().collect(Collectors.toMap(User::getNumber, User::getName, (key1, key2) -> key2));
+        // // Map<Long, String> map = userList.stream().collect(Collectors.toMap(User::getNumber, User::getName));
+        // Map<Long, User> userMap = userList.stream().collect(Collectors.toMap(User::getNumber, user -> user, (key1, key2) -> key2));
+        // System.out.println("map为：" + map);
+        // System.out.println("userMap为：" + userMap);
+        // userList.stream().map(User::getAge).collect(Collectors.toList()).stream().sorted().distinct().forEach(s -> System.out.println(s));
+        //
+        // //对数组的统计，比如用
+        // List<Integer> number = Arrays.asList(1, 2, 5, 4, 7, 3, 9);
+        //
+        // int[] ints = number.stream().mapToInt(i -> i).toArray();
+        // List<Integer> list = Arrays.stream(ints).boxed().collect(Collectors.toList());
+        //
+        //
+        // // 求和
+        // long sum = number.stream().mapToInt((x) -> x).summaryStatistics().getSum();
+        // // 最大值
+        // int max = number.stream().mapToInt(x -> x).summaryStatistics().getMax();
+        // int min = number.stream().mapToInt(x -> x).summaryStatistics().getMin();
+        // double average = number.stream().mapToInt(x -> x).summaryStatistics().getAverage();
+        // System.out.println("最大值；" + max + " 最小值：" + min + " 和为：" + sum + " 品均值为：" + average);
+        //
+        // Map<String, List<User>> listMap = userList.stream().collect(Collectors.groupingBy(s -> s.getName()));
+        // System.out.println("listMap为：" + listMap);
+        //
+        // int[] array = number.stream().mapToInt(i -> i).toArray();
+        // Arrays.stream(array).sorted().forEach(i -> System.out.println(i));
+        //
+        // Stream.of(array).collect(Collectors.toList());
+        // List<Integer> integerList = Arrays.stream(array).boxed().collect(Collectors.toList());
+        // integerList.stream().forEach(System.out::println);
+        //
+        //
+        // List<String> stringList = new ArrayList<>();
+        // stringList.add("1");
+        // stringList.add("2");
+        // stringList.add("3");
+        // stringList.add("4");
+        //
+        // System.out.println("List转成string：" + StringUtils.join(stringList, ","));
+        //
+        // IntStream.rangeClosed(1, 7).forEach(System.out::println);
+        //
+        // int[] arr = new int[6];
+        //
+        // Arrays.fill(arr, 1);
+        // Arrays.stream(arr).forEach(System.out::println);
+        //
+        // int[] nums = {-7, -3, 3, 4,6};
+        // int[] res = new int[nums.length];
+        // for (int i = 0; i < nums.length; i++) {
+        //     res[i] = Math.abs(nums[i]) * Math.abs(nums[i]);
+        // }
+        // Arrays.sort(res);
+        //
+        // // System.out.println(">>>运算结果：" + (2 >>> 16));
+        // // System.out.println(">>>运算结果：" + (2 >>> 2));
+        //
+        // List<String> splitList = Arrays.asList("aaa", "bbb", "ccc");
+        // System.out.println(splitList.stream().collect(Collectors.joining("、", "[", "]")));
+        //
+        //
+        // List<String> sortList = Arrays.asList("1", "22", "15", "7", "18");
+        // sortList.stream().sorted().collect(Collectors.toList()).forEach(System.out::println);
 
-        List<Integer> list1 = Arrays.asList(1,5,7,4,3);
+        List<Integer> list1 = Arrays.asList(1, 5, 7, 4, 3);
 
         list1.stream().sorted(Comparator.comparing(Integer::intValue).reversed()).collect(Collectors.toList()).forEach(System.out::println);
     }

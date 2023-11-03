@@ -17,14 +17,11 @@
     <modules>
         <module>leecode</module>
         <module>jvm</module>
-        <module>concurrent</module>
         <module>jucthread</module>
-        <module>mybatis</module>
         <module>java8newfeature</module>
-        <module>common</module>
-        <module>spring</module>
         <module>java-io</module>
         <module>reflection</module>
+        <module>interview</module>
     </modules>
 
     <dependencies>
