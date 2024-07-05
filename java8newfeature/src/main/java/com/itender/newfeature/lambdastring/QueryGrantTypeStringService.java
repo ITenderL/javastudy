@@ -15,9 +15,9 @@ import java.util.function.Function;
  * @desc
  */
 @Service
-public class QueryGrantTypeService {
+public class QueryGrantTypeStringService {
     @Autowired
-    private GrantTypeService grantTypeService;
+    private GrantTypeStringService grantTypeService;
     private final Map<String, Function<String, String>> grantTypeMap = new HashMap<>();
 
     @PostConstruct
