@@ -1,4 +1,4 @@
-package com.itender.io.file;
+package com.itender.io;
 
 /**
  * @author itender
