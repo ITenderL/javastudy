@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class GrantTypeService {
+public class GrantTypeStringService {
     public String redPaper(String resourceId) {
         log.info("resourceId = {}", resourceId);
         return "每周末9点发放";

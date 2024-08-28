@@ -1,4 +1,4 @@
-package com.itender.io.file;
+package com.itender.io;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

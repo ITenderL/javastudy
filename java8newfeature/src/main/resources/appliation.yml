@@ -1,3 +1,24 @@
-#logging:
-#  config: classpath:/logback-spring.xml
-#  path: D:/ELK/logs
+spring:
+  application:
+    name: test
+  redis:
+    lettuce:
+      cluster:
+        refresh:
+          adaptive: true
+          period: 10S
+    pool:
+      max-idle: 8
+      min-idle: 1
+      max-active: 8
+      max-wait: -1
+    database: 0
+    timeout: 100000
+    cluster:
+      nodes:
+        - idata-tag-redis06-fh-t.seeke.net:6379
+        - idata-tag-redis05-fh-t.seeke.net:6379
+        - idata-tag-redis04-fh-t.seeke.net:6379
+        - idata-tag-redis03-fh-t.seeke.net:6379
+        - idata-tag-redis02-fh-t.seeke.net:6379
+        - idata-tag-redis01-fh-t.seeke.net:6379
