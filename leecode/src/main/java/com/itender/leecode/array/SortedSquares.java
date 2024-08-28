@@ -1,6 +1,8 @@
 package com.itender.leecode.array;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
 
 /**
  * @author itender
@@ -12,11 +14,10 @@ public class SortedSquares {
         int[] nums = new int[]{-4, -1, 0, 3, 10};
         // System.out.println(Arrays.toString(sortedSquares(nums)));
         System.out.println(Arrays.toString(sortedSquares2(nums)));
-
     }
 
     /**
-     * 给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
+     * 给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。坐标移动
      * <p>
      * <p>
      * <p>
