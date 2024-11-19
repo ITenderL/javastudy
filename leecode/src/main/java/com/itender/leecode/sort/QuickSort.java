@@ -13,9 +13,9 @@ public class QuickSort {
         quickSort(0, array.length - 1, array);
         System.out.println("quickSort : " + Arrays.toString(array));
 
-        int[] array1 = new int[]{9, 19, 4, 15, 3, 25, 7, 8, 2, 19, 9, 6, 11};
-        quickSort1(0, array1.length - 1, array1);
-        System.out.println("quickSort1 : " + Arrays.toString(array1));
+        // int[] array1 = new int[]{9, 19, 4, 15, 3, 25, 7, 8, 2, 19, 9, 6, 11};
+        // quickSort1(0, array1.length - 1, array1);
+        // System.out.println("quickSort1 : " + Arrays.toString(array1));
     }
 
     /**
@@ -46,6 +46,7 @@ public class QuickSort {
                 array[j] = array[i];
             }
         }
+        // 交换基数的位置
         array[i] = index;
         quickSort(left, i - 1, array);
         quickSort(i + 1, right, array);
